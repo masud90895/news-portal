@@ -13,9 +13,19 @@
 
 bonus mark..
 1.btn a click korle spener dekhaite hobe
-2.koto ta new ase dekhaite hobe
+2.koto ta news ase dekhaite hobe
 3.error add korte hobe
 4.must responsive
 5.blog a click korle new html add  hbe
 6.minimum 10 commit in github
-7.sot kora
+7.sort kora
+
+
+
+
+
+
+1.var let const different
+2.arrow function & regular function different
+3.map,foreatch,finter,find ar difference
+4.why use temple sting
