@@ -42,16 +42,38 @@ const loadCard =async(id) =>{
 
 
 const displayCard =(cards) =>{
-    console.log(cards);
+     
     const cardSection = document.getElementById('card-section');
     cardSection.textContent =""
+    // founded msg 
+    const foundedMessege = document.getElementById('founded-msg');
+    foundedMessege.classList.remove('hidden')
+
+    
+    // founded-text
+    const fountText = document.getElementById('founded-text')
+    fountText.innerText = cards.length;
+
+
+    // speener 
+    const speenerContainer = document.getElementById('speener-container');
+    speenerContainer.classList.remove('hidden');
+    // console.log(speenerContainer);
     cards.forEach(card => {
+
+
         const {image_url,thumbnail_url,title,details,author,total_view,} = card;
         const {name,published_date,img} =author;
 
         // card section html 
 
         const cardSectionDiv =document.createElement("div");
+
+            // speener 
+        const speenerContainer = document.getElementById('speener-container');
+    speenerContainer.classList.add('hidden');
+
+
         cardSectionDiv.classList.add("card", "card-side", "bg-base-100", "shadow-xl", "p-4", "mb-5")
         cardSectionDiv.innerHTML =`
                     <figure class="w-1/4"><img src="${thumbnail_url}" alt="Movie"></figure>
@@ -102,7 +124,7 @@ const displayCard =(cards) =>{
 
 
 // card section call 
-loadCard("1")
+// loadCard("1")
 
 
 // loadCategory call 
