@@ -17,6 +17,7 @@ const displayCategory= async (data)=>{
         const {category_name} =category;
         const categoryContainer =document.getElementById('catagory-container');
         const categoriesDiv =document.createElement('li');
+        categoriesDiv.classList.add("font-semibold");
         categoriesDiv.innerHTML=`
         <a>${category_name}</a>
         `;
