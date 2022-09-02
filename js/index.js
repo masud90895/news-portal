@@ -15,11 +15,11 @@ const loadCategory =async() =>{
 const displayCategory= async (data)=>{
     const categoryContainer =document.getElementById('catagory-container');
     data.forEach(category => {
-        const {category_name} =category;
+        const {category_name,category_id} =category;
         const categoriesDiv =document.createElement('li');
         categoriesDiv.classList.add("font-semibold");
         categoriesDiv.innerHTML=`
-        <a>${category_name}</a>
+        <a onclick="loadCard(${category_id})">${category_name}</a>
         `;
         categoryContainer.appendChild(categoriesDiv)
         
@@ -27,9 +27,9 @@ const displayCategory= async (data)=>{
 }
 
 // card section 
+const loadCard =async(id) =>{
 
-const loadCard =async() =>{
-    const url ="https://openapi.programming-hero.com/api/news/category/01"
+    const url =`https://openapi.programming-hero.com/api/news/category/0${id}`
    try{
     const res =await fetch (url)
     const data = await res.json()
@@ -44,6 +44,7 @@ const loadCard =async() =>{
 const displayCard =(cards) =>{
     console.log(cards);
     const cardSection = document.getElementById('card-section');
+    cardSection.textContent =""
     cards.forEach(card => {
         const {image_url,thumbnail_url,title,details,author,total_view,} = card;
         const {name,published_date,img} =author;
@@ -101,7 +102,7 @@ const displayCard =(cards) =>{
 
 
 // card section call 
-loadCard()
+loadCard("1")
 
 
 // loadCategory call 
