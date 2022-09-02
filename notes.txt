@@ -1,0 +1,21 @@
+1.websiter name dite hobe....{news porttal deoya jabe na} & title a dekhate hbe
+2.nav bar thakte hobe...
+3.modal ar view & data na thakle 
+4.
+5.
+6.
+7.
+8.
+
+
+
+
+
+bonus mark..
+1.btn a click korle spener dekhaite hobe
+2.koto ta new ase dekhaite hobe
+3.error add korte hobe
+4.must responsive
+5.blog a click korle new html add  hbe
+6.minimum 10 commit in github
+7.sot kora
