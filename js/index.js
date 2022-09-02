@@ -26,6 +26,32 @@ const displayCategory= async (data)=>{
     });
 }
 
+// card section 
+
+const loadCard =async() =>{
+    const url ="https://openapi.programming-hero.com/api/news/category/01"
+   try{
+    const res =await fetch (url)
+    const data = await res.json()
+    displayCard(data.data)
+   }
+   catch(error){
+    console.log(error);
+   }   
+}
+
+
+const displayCard =(cards) =>{
+    cards.forEach(card => {
+        console.log(card);
+        
+    });
+}
+
+
+// card section call 
+loadCard()
+
 
 // loadCategory call 
 loadCategory()
