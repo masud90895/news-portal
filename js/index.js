@@ -73,7 +73,8 @@ const displayCard =(cards) =>{
             // speener 
         const speenerContainer = document.getElementById('speener-container');
     speenerContainer.classList.add('hidden');
-
+         
+   
 
         cardSectionDiv.classList.add("card", "lg:card-side", "bg-base-100", "shadow-xl", "lg:p-4", "mb-5" ,"w-11/12","lg:w-full","mx-auto")
         cardSectionDiv.innerHTML =`
@@ -128,9 +129,9 @@ const modal =(image,name,published,view) =>{
     const modalBody =document.getElementById('modal-body');
     modalBody.textContent = "";
     modalBody.innerHTML =`
-    <p class="mb-3">Author Name :${name ?.name || "name not found"}</p>
-    <p class="mb-3">published date :"${published ?.published || 'published date not found'}"</p>
-    <p class="mb-3">total view :"${view ?.view || 'no views'}" M</p>
+    <p class="mb-3">Author Name :${name? name : "name not found"}</p>
+    <p class="mb-3">published date :${published? published : 'published date not found'}</p>
+    <p class="mb-3">total view :${view? view : 'no views'} M</p>
     <img src="${image ? image : 'image not found'}"/>
     
     `
