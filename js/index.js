@@ -57,8 +57,39 @@ const displayCard =(cards) =>{
                     <div class="card-body w-3/4">
                       <h2 class="card-title">${title}</h2>
                       <p>${details.length > 400 ? details.slice(0,400) + " ....." : details}</p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Watch</button>
+                      <div class="card-actions justify-between items-center">                   
+                        <div class="flex">
+                            <div class="mr-3">
+                                <img class="w-[40px] rounded-full" src="${img ? img : "img not found"}" alt="">
+                            </div>
+                            <div >
+                                <h4 class="font-bold text-xl">${name ? name : "name not found"}</h4>
+                            <h5>${published_date ? published_date : "published date not found"}</h5>
+                            </div>
+                        </div>
+                
+                        <div class="flex" >
+                           <div>
+                            <img src="img/icons8-eye-24.png" alt="">
+                           </div>
+                                <div class="flex ml-3 items-center">
+                                    <h1><span>${total_view ? total_view : "no views"}</span> M</h1> 
+                                </div>                                                      
+                        </div>
+
+                         <div class="text-yellow-500">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                         </div>
+
+
+                        <div>
+                            <button class="btn bg-blue-600"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        
                       </div>
                     </div>
                   
