@@ -108,11 +108,10 @@ const displayCard =(cards) =>{
                             <i class="fa-solid fa-star-half-stroke"></i>
                          </div>
 
-
-                        <div>
-                            <button class="btn bg-blue-600"><i class="fa-solid fa-arrow-right"></i></button>
-                        </div>
-                        
+                         <div class="card-actions justify-end">
+                         <label for="my-modal-4" class="btn btn-primary modal-button" onclick="modal('${card.image_url}', '${card.author.name}')"><i class="fa-solid fa-arrow-right"></i></label>
+                       </div>
+                                        
                       </div>
                     </div>
                   
@@ -121,6 +120,20 @@ const displayCard =(cards) =>{
         
     });
 }
+
+const modal =(image,author) =>{
+    console.log(image);
+    console.log(author);
+    const modalBody =document.getElementById('modal-body');
+    modalBody.textContent = "";
+    modalBody.innerHTML =`
+    <p>${author}</p>
+    <img src="${image}"/>
+    
+    `
+}
+
+
 
 
 // card section call 

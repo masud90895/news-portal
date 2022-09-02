@@ -106,11 +106,28 @@
             
         </section>
 
+        <!-- modal -->
+    <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box relative">
+            <label for="my-modal-4" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            
+            <div id="modal-body">
 
+            </div>
+        </div>
+    </div>
+            
 
 
    </main>
     
+
+   <div class="card-actions justify-end">
+    <label for="my-modal-4">
+        <button for="my-modal-4" onclick='modal("${(card.image_url)}","${card.author.name}")' class="btn bg-blue-600"><i class="fa-solid fa-arrow-right"></i></button>
+        </label>
+        </div> 
 
 
    <script src="js/index.js"></script>
