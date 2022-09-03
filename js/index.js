@@ -42,7 +42,6 @@ const loadCard =async(id) =>{
 
 
 const displayCard =(cards) =>{
-    //  console.log(cards);
     const cardSection = document.getElementById('card-section');
     cardSection.textContent =""
     // founded msg 
@@ -60,12 +59,35 @@ const displayCard =(cards) =>{
     const speenerContainer = document.getElementById('speener-container');
     speenerContainer.classList.remove('hidden');
     // console.log(speenerContainer);
+
+    
+    // sort 
+
+    const sortFind = cards.sort((x,y)=>{
+        if(x.total_view < y.total_view){
+            return 1;
+        }
+        else{
+            return -1;
+        }
+    })
+    // console.log(sortFind);
+
+
+
+      
+    
+
     cards.forEach(card => {
         
         const {image_url,thumbnail_url,title,details,author,total_view,} = card;
         const {name,published_date,img} =author;
         
-
+        
+      // sort 
+      
+    
+    
         // card section html 
 
         const cardSectionDiv =document.createElement("div");
@@ -111,7 +133,7 @@ const displayCard =(cards) =>{
                          </div>
 
                          <div class="card-actions justify-end">
-                         <label for="my-modal-4" class="btn btn-primary modal-button" onclick="modal('${card.author.img}', '${card.author.name}', '${card.author.published_date}', '${card.total_view}')"><i class="fa-solid fa-arrow-right"></i></label>
+                         <label for="my-modal-4" class="btn btn-primary modal-button" onclick="modal('${card._id}')"><i class="fa-solid fa-arrow-right"></i></label>
                        </div>
                                         
                       </div>
@@ -121,18 +143,34 @@ const displayCard =(cards) =>{
         cardSection.appendChild(cardSectionDiv)
         
     });
+    
 }
 
-const modal =(image,name,published,view) =>{
-    
+
+
+
+const modal =async id =>{
+    const url =`https://openapi.programming-hero.com/api/news/${id}`
+    let data ={};
+   try{
+    const res =await fetch (url)
+    data = await res.json()
+    // displayCard(data.data)
+   }
+   catch(error){
+    console.log(error);
+   }  
+   const {name,published_date,img} = data.data[0].author;
+    //   console.log( data.data[0].author);
+      console.log(img);
+      
     
     const modalBody =document.getElementById('modal-body');
     modalBody.textContent = "";
     modalBody.innerHTML =`
-    <p class="mb-3">Author Name :${name? name : "name not found"}</p>
-    <p class="mb-3">published date :${published? published : 'published date not found'}</p>
-    <p class="mb-3">total view :${view? view : 'no views'} M</p>
-    <img src="${image ? image : 'image not found'}"/>
+    <p class="mb-3">Author Name :${name? name  : "name not found"}</p>
+    <p class="mb-3">published date :${published_date ? published_date : 'published date not found'}</p>
+    <img src="${img ? img: 'image not found'}"/>
     
     `
 }
