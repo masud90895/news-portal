@@ -53,7 +53,7 @@
     
     <!-- category  section start  -->
     <section class="container mx-auto mt-5 shadow-md rounded-md">
-        <ul id="catagory-container" class="menu menu-horizontal bg-base-100 rounded-box grid grid-cols-3 lg:grid-cols-8 justify-between ">
+        <ul id="catagory-container" class="menu flex flex-col md:flex-row bg-base-100 rounded-box p-2 justify-around">
             <!-- <li><a>Item 1</a></li>
             <li><a>Item 2</a></li>
             <li><a>Item 3</a></li> -->
@@ -61,9 +61,9 @@
     </section>
 
       <!-- founded msg  -->
-      <div id="founded-msg" class=" w-full container mx-auto bg-white text-black text-primary-content mb-5 shadow-md hidden">
+      <div id="founded-msg" class=" card w-full container mx-auto bg-white text-blue-600 text-primary-content drop-shadow-md hidden border-t-2 border-t-gray-300 ">
         <div class="p-5 items-center">
-          <h2 class="card-title "><span id="founded-text">0</span> items found </h2>
+          <h2 class="card-title text-2xl font-bold mx-auto"><span id="founded-text">0</span> items found </h2>
           </div>
         </div>
 
@@ -95,9 +95,21 @@
         </section>
 
          <!-- speener  -->
-         <section id="speener-container" class=" container mx-auto hidden">
+         <!-- <section id="speener-container" class=" container mx-auto hidden">
             <progress  class="progress w-full"></progress>
-      </section>
+      </section> -->
+      <section>
+        <div id="speener-container" class="flex items-center justify-center space-x-2 animate-bounce hidden">
+
+
+            <div class="w-8 h-8 bg-blue-400 rounded-full"></div>
+            <div class="w-8 h-8 bg-green-400 rounded-full"></div>
+            <div class="w-8 h-8 bg-black rounded-full"></div>
+
+
+
+        </div>
+    </section>
 
         <!-- card section  -->
 
@@ -117,6 +129,16 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+    <!-- text  -->
+
             
 
 
@@ -140,6 +162,11 @@
           <p>Copyright © 2022 - Md Masud Rana</p>
         </div>
       </footer>
+
+
+
+
+      
 
 
    <script src="js/index.js"></script>

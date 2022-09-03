@@ -60,11 +60,26 @@
     </h2>
     <div id="accordion-collapse-body-1" class="" aria-labelledby="accordion-collapse-heading-1">
       <div class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-        <p class="mb-2 text-gray-500 dark:text-gray-400">A lot of shiny new features came out with ES2015 (ES6). And now, since it's 2020, it's assumed that a lot of JavaScript developers have become familiar with and have started using these features.
-
-          While this assumption might be partially true, it's still possible that some of these features remain a mystery to some devs.
-          One of the features that came with ES6 is the addition of let and const, which can be used for variable declaration. The question is, what makes them different from good ol' var which we've been using? If you are still not clear about this, then this article is for you.</p>
-        <p class="text-gray-500 dark:text-gray-400">In this article, we'll discuss var, let and const  with respect to their scope, use, and hoisting. As you read, take note of the differences between them that I'll point out.</p>
+        <p class="mb-2 text-gray-500 dark:text-gray-400"><span class="font-bold">var:</span> <br>
+          The scope of a var variable is functional scope. <br>
+          It can be updated and re-declared into the scope. <br>
+          It can be declared without initialization. <br>
+          It can be accessed without initialization as its default value is “undefined”. <br>
+          hoisting done , with initializing as ‘default’ value <br> <br>
+          <span class="font-bold">let:</span> <br>
+          The scope of a let variable is block scope. <br>
+          It can be updated but cannot be re-declared into the scope. <br>
+          It can be declared without initialization. <br>
+          It cannot be accessed without initialization otherwise it will give ‘referenceError’. <br>
+          Hoisting is done , but not initialized (this is the reason for error when we access the let variable
+          before declaration/initialization <br> <br>
+          <span class="font-bold">const:</span> <br>
+          The scope of a const variable is block scope. <br>
+          It cannot be updated or re-declared into the scope. <br>
+          It cannot be declared without initialization. <br>
+          It cannot be accessed without initialization, as it cannot be declared without initialization. <br>
+          Hoisting is done, but not initialized (this is the reason for error when we access the const
+          variable before declaration/initialization</p>
       </div>
     </div>
     <h2 id="accordion-collapse-heading-2">
@@ -75,10 +90,14 @@
     </h2>
     <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
       <div class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700">
-        <p class="mb-2 text-gray-500 dark:text-gray-400">Regular functions created using function declarations or expressions are constructible and callable. Since regular functions are constructible, they can be called using the new keyword. However, the arrow functions are only callable and not constructible, i.e arrow functions can never be used as constructor functions.</p>
-        <p class="text-gray-500 dark:text-gray-400">The arrow function example above allows a developer to accomplish the same result with fewer lines of code and approximately half the typing.
+        <p class="mb-2 text-gray-500 dark:text-gray-400">Regular functions created using function declarations or expressions are constructible and callable.
+          Since regular functions are constructible, they can be called using the new keyword. However, the
+          arrow functions are only callable and not constructible, i.e arrow functions can never be used as
+          constructor functions. <br>
 
-          Curly brackets aren’t required if only one expression is present. The above example can also be written like this:</p>
+          The arrow function example above allows a developer to accomplish the same result with fewer lines
+          of code and approximately half the typing. Curly brackets aren’t required if only one expression is
+          present.</p>
       </div>
     </div>
     <h2 id="accordion-collapse-heading-3">
@@ -89,16 +108,25 @@
     </h2>
     <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
       <div class="p-5 font-light border border-t-0 border-gray-200 dark:border-gray-700">
-        <p class="mb-2 text-gray-500 dark:text-gray-400">.forEach:
+        <p class="mb-2 text-gray-500 dark:text-gray-400">.forEach: .forEach(), is used to execute the same code on every element in an array but does not
+          change the array and it returns undefined. Example: In the example below we would use .forEach() to
+          iterate over an array of food and log that we would want to eat each of them. let food =
+          ['mango','rice','pepper','pear']; food.forEach(function(foodItem){ console.log('I want to eat
+          '+foodItem); }); <br><br>
 
-          .forEach(), is used to execute the same code on every element in an array but does not change the array and it returns undefined.
-          
-          Example:
-          In the example below we would use .forEach() to iterate over an array of food and log that we would want to eat each of them.
-          
-          let food = ['mango','rice','pepper','pear'];
-          food.forEach(function(foodItem){ console.log('I want to eat '+foodItem);
-          });</p>
+          .map: executes the same code on every element in an array and returns a new array with the updated
+          elements. .filter() checks every element in an array to see if it meets a certain criteria and
+          returns a new array with the elements that return truthy for the criteria. <br><br>
+
+          .find: The find() method returns the value of the first element that passes a test. The find()
+          method
+          executes
+          a function for each array element. The find() method returns undefined if no elements are found. The
+          find() method does not execute the function for empty elements. <br><br>
+
+          .filter: The filter() method creates a new array filled with elements that pass a test provided by a
+          function. The filter() method does not execute the function for empty elements. The filter() method
+          does not change the original array. <br><br></p>
         <p class="mb-2 text-gray-500 dark:text-gray-400">.map() executes the same code on every element in an array and returns a new array with the updated elements.
           .filter() checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria.
         </p>
@@ -112,14 +140,35 @@
     </h2>
     <div id="accordion-collapse-body-4" class="hidden" aria-labelledby="accordion-collapse-heading-3">
       <div class="p-5 font-light border border-t-0 border-gray-200 dark:border-gray-700">
-        <p class="mb-2 text-gray-500 dark:text-gray-400">Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called tagged templates.</p>
-        <p class="mb-2 text-gray-500 dark:text-gray-400">Template literals are sometimes informally called template strings, because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders). However, a tagged template literal may not result in a string; it can be used with a custom tag function to perform whatever operations you want on the different parts of the template literal.</p>
+        <p class="mb-2 text-gray-500 dark:text-gray-400">It lets us insert/interpolate variables and expressions into strings without needing to concatenate
+          like in older versions of JavaScript. It allows us to create strings that are complex and contain
+          dynamic elements. Another great thing that comes with template strings are tags.</p>
         
       </div>
     </div>
   </div>
   
         </div>
+
+         <!-- footer  -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+      <div class="grid grid-flow-col gap-4">
+        <a class="link link-hover">About us</a> 
+        <a class="link link-hover">Contact</a> 
+        <a class="link link-hover">Jobs</a> 
+        <a class="link link-hover">Press kit</a>
+      </div> 
+      <div>
+        <div class="grid grid-flow-col gap-4">
+          <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a> 
+          <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a> 
+          <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+        </div>
+      </div> 
+      <div>
+        <p>Copyright © 2022 - Md Masud Rana</p>
+      </div>
+    </footer>
 
 
         <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
